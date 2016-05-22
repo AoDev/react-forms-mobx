@@ -2,6 +2,7 @@ const person = {
   fullName: 'John Doe',
   job: 'Web Developer',
   email: 'john.doe@example.com',
+  sex: 'male',
   address: {
     city: 'Budapest',
     postalCode: '1000',
