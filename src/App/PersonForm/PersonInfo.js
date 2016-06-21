@@ -14,9 +14,15 @@ class PersonInfo extends Component {
         <InputField id="fullname" name="fullName" value={person.fullName} onChange={updateProperty}/>
         <InputField id="job" name="job" value={person.job} onChange={updateProperty}/>
         <InputField id="email" name="email" value={person.email} onChange={updateProperty}/>
-        <InputRadio items={sexes} name="sex" value={person.sex} onChange={updateProperty}/>
-        <InputCheckbox id="alive" name="alive" value={person.alive} onChange={updateProperty}/>
-        <InputCheckboxes items={mascots} name="mascots" checkedItems={person.mascots} onChange={updateArray}/>
+        <div className="row">
+          <div className="col-sm-6">
+            <InputRadio items={sexes} name="sex" value={person.sex} onChange={updateProperty}/>
+            <InputCheckbox id="alive" name="alive" value={person.alive} onChange={updateProperty}/>
+          </div>
+          <div className="col-sm-6">
+            <InputCheckboxes items={mascots} name="mascots" checkedItems={person.mascots} onChange={updateArray}/>
+          </div>
+        </div>
       </div>
     )
   }

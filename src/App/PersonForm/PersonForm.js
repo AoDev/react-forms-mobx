@@ -16,17 +16,41 @@ export default class PersonForm extends Component {
   }
 
   render () {
-    const {person} = this.props
+    const {person, submitForm} = this.props
     return (
       <div>
         <h1>My Person Form</h1>
-        <form>
-          <PersonInfo person={person} />
-          <PersonAddress address={person.address} />
-          {
-            person.tasks
-              .map((task) => <PersonTask key={task.id} task={task} />)
-          }
+        <form onSubmit={submitForm}>
+          <div className="row">
+            <div className="col-sm-6">
+              <fieldset>
+                <legend>General info</legend>
+                <PersonInfo person={person} />
+              </fieldset>
+            </div>
+            <div className="col-sm-6">
+              <fieldset>
+                <legend>Address</legend>
+                <PersonAddress address={person.address} />
+              </fieldset>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-6">
+            <fieldset>
+            <legend>Tasks</legend>
+            {
+              person.tasks
+                .map((task) => <PersonTask key={task.id} task={task} />)
+            }
+            </fieldset>
+            </div>
+            <div className="col-sm-6">
+              <h2>Send updated data</h2>
+              <p>(check the console)</p>
+              <button className="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </div>
         </form>
       </div>
     )
