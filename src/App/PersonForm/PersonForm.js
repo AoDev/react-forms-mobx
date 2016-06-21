@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import {observer} from 'mobx-react'
+import PersonInfo from './PersonInfo'
 import PersonAddress from './PersonAddress'
 import PersonTask from './PersonTask'
-import {InputField} from '../../components'
 
 @observer
 export default class PersonForm extends Component {
@@ -21,10 +21,7 @@ export default class PersonForm extends Component {
       <div>
         <h1>My Person Form</h1>
         <form>
-          <InputField name="fullName" value={person.fullName} onChange={this.updateProperty}/>
-          <InputField name="job" value={person.job} onChange={this.updateProperty}/>
-          <InputField name="email" value={person.email} onChange={this.updateProperty}/>
-
+          <PersonInfo person={person} />
           <PersonAddress address={person.address} />
           {
             person.tasks
