@@ -8,6 +8,7 @@ const person = {
     postalCode: '1000',
     street: 'Reactive street'
   },
+  alive: true,
   tasks: [
     {
       id: '1',

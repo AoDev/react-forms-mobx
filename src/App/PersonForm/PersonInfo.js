@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import {observer} from 'mobx-react'
-import {InputField, InputRadio, asForm} from '../../components'
+import {InputField, InputRadio, InputCheckbox, asForm} from '../../components'
 
 const sexes = ['female', 'male']
 
@@ -14,6 +14,7 @@ class PersonInfo extends Component {
         <InputField id="job" name="job" value={person.job} onChange={updateProperty}/>
         <InputField id="email" name="email" value={person.email} onChange={updateProperty}/>
         <InputRadio items={sexes} name="sex" value={person.sex} onChange={updateProperty}/>
+        <InputCheckbox id="alive" name="alive" value={person.alive} onChange={updateProperty}/>
       </div>
     )
   }
