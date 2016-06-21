@@ -9,6 +9,7 @@ const person = {
     street: 'Reactive street'
   },
   alive: true,
+  mascots: ['bird', 'dog'],
   tasks: [
     {
       id: '1',
